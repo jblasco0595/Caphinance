@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: caphinance_spring
+      MYSQL_ROOT_PASSWORD: 123
+    ports:
+      - "3306:3306"

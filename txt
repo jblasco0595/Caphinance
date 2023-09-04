@@ -1,0 +1,35 @@
+INSERT INTO users (email) VALUES
+('john.doe@example.com'),
+('jane.smith@example.net'),
+('alice.jones@example.org'),
+('bob.brown@example.com'),
+('charlie.white@example.net'),
+('david.green@example.org'),
+('eva.black@example.com'),
+('frank.gray@example.net'),
+('grace.blue@example.org'),
+('harry.red@example.com');
+
+INSERT INTO user_credentials (user_id, password_hash, access_token, refresh_token) VALUES
+(1, 'hashed_password1', 'access_token1', 'refresh_token1'),
+(2, 'hashed_password2', 'access_token2', 'refresh_token2'),
+(3, 'hashed_password3', 'access_token3', 'refresh_token3'),
+(4, 'hashed_password4', 'access_token4', 'refresh_token4'),
+(5, 'hashed_password5', 'access_token5', 'refresh_token5'),
+(6, 'hashed_password6', 'access_token6', 'refresh_token6'),
+(7, 'hashed_password7', 'access_token7', 'refresh_token7'),
+(8, 'hashed_password8', 'access_token8', 'refresh_token8'),
+(9, 'hashed_password9', 'access_token9', 'refresh_token9'),
+(10, 'hashed_password10', 'access_token10', 'refresh_token10');
+
+INSERT INTO user_profiles (user_id, first_name, second_name, lastname, second_lastname, nickname, date_of_birth, country, address, postal_code, phone_number) VALUES
+(1, 'John', 'Joseph', 'Doe', 'Smith', 'JJD', '1990-01-01', 'USA', '123 Elm St', '12345', '555-1234'),
+(2, 'Jane', 'Mary', 'Smith', 'Jones', 'JMS', '1985-02-02', 'UK', '456 Oak St', '23456', '555-5678'),
+(3, 'Alice', 'Eve', 'Jones', 'Brown', 'AEJ', '1980-03-03', 'Canada', '789 Maple St', '34567', '555-9012'),
+(4, 'Bob', 'Michael', 'Brown', 'White', 'BMB', '1975-04-04', 'Australia', '101 Pine St', '45678', '555-3456'),
+(5, 'Charlie', 'Paul', 'White', 'Green', 'CPW', '1970-05-05', 'New Zealand', '202 Birch St', '56789', '555-7890'),
+(6, 'David', 'Robert', 'Green', 'Black', 'DRG', '1995-06-06', 'South Africa', '303 Cedar St', '67890', '555-1122'),
+(7, 'Eva', 'Nina', 'Black', 'Gray', 'ENB', '2000-07-07', 'Ireland', '404 Spruce St', '78901', '555-3344'),
+(8, 'Frank', 'Oscar', 'Gray', 'Blue', 'FOG', '1965-08-08', 'India', '505 Fir St', '89012', '555-5566'),
+(9, 'Grace', 'Lily', 'Blue', 'Red', 'GLB', '2005-09-09', 'Germany', '606 Redwood St', '90123', '555-7788'),
+(10, 'Harry', 'James', 'Red', 'Green', 'HJR', '2010-10-10', 'France', '707 Cypress St', '01234', '555-9900');
