@@ -2,19 +2,19 @@
 
 type Query {
     getUsers: [User]
-    getUser(userId: String!): User
+    getUser(userId: ID!): User
 }
 
 type Mutation {
-    createUser(user: UserInput!): User
-    updateUser(userId: String!, user: UserInput): User
-    deleteUser(userId: String!): Boolean
+    createUser(userInput: UserInput!): User
+    updateUser(userId: ID!, userInput: UserInput): User
+    deleteUser(userId: ID!): Boolean
 }
 
 # Tipo de objeto principal
 
 type User {
-    userId: String!
+    userId: ID!
     email: String!
 }
 
