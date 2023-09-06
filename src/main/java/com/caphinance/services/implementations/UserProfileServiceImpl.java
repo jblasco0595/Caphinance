@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserProfileServiceImpl implements UserProfileService {
@@ -14,8 +15,8 @@ public class UserProfileServiceImpl implements UserProfileService {
     private UserProfileRepository userProfileRepository;
 
     @Override
-    public UserProfile findById(Long id) {
-        return userProfileRepository.findById(id).orElse(null);
+    public Optional<UserProfile> findById(Long id) {
+        return userProfileRepository.findById(id);
     }
 
     @Override

@@ -1,0 +1,90 @@
+# Tipos de consulta y mutación
+
+type Query {
+    #--------------------User Query-----------------
+    getUsers: [User]
+    getUser(userId: ID!): User
+
+    #--------------------UserCredential Query-------
+    getUserCredentials: [UserCredential]
+    getUserCredential(credentialId: ID!): UserCredential
+
+    #-------------------UserProfile Query-----------
+    getUserProfiles: [UserProfile]
+    getUserProfile(profileId: ID!): UserProfile
+}
+
+type Mutation {
+    #--------------------User Mutation-----------------
+    createUser(userInput: UserInput!): User
+    updateUser(userId: ID!, userInput: UserInput): User
+    deleteUser(userId: ID!): Boolean
+
+    #--------------------UserCredential Mutation-------
+    createUserCredential(userCredentialInput: UserCredentialInput!): UserCredential
+    updateUserCredential(credentialId: ID!, userCredentialInput: UserCredentialInput): UserCredential
+    deleteUserCredential(credentialId: ID!): Boolean
+
+    #-------------------UserProfile Mutation-----------
+    createUserProfile(userProfileInput: UserProfileInput !): UserProfile
+    updateUserProfile(profileId: ID!, userProfileInput : UserProfileInput ): UserProfile
+    deleteUserProfile(profileId: ID!): Boolean
+}
+
+# Tipos de objetos principales
+
+type User {
+    userId: ID!
+    email: String
+}
+
+type UserCredential {
+    credentialId: ID!
+    user: User
+    passwordHash: String
+    accessToken: String
+    refreshToken: String
+}
+
+type UserProfile {
+    profileId: ID!
+    firstName: String
+    secondName: String
+    lastName: String
+    secondLastName: String
+    nickname: String
+    dateOfBirth: String
+    country: String
+    address: String
+    postalCode: String
+    phoneNumber: String
+    user: User
+    # ... otros campos que desees exponer en GraphQL ...
+}
+
+# Tipos de entradas para las mutaciones
+
+input UserInput {
+    email: String
+}
+
+input UserCredentialInput {
+    userId: ID
+    passwordHash: String
+    accessToken: String
+    refreshToken: String
+}
+
+input UserProfileInput {
+    firstName: String
+    secondName: String
+    lastName: String
+    secondLastName: String
+    nickname: String
+    dateOfBirth: String
+    country: String
+    address: String
+    postalCode: String
+    phoneNumber: String
+    userId: ID
+}
