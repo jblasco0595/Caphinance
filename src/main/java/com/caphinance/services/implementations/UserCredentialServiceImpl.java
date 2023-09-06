@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserCredentialServiceImpl implements UserCredentialService {
@@ -14,8 +15,8 @@ public class UserCredentialServiceImpl implements UserCredentialService {
     private UserCredentialRepository userCredentialRepository;
 
     @Override
-    public UserCredential findById(Long id) {
-        return userCredentialRepository.findById(id).orElse(null);
+    public Optional<UserCredential> findById(Long id) {
+        return userCredentialRepository.findById(id);
     }
 
     @Override
